@@ -1,6 +1,50 @@
+---
+name: spec-kit
+description: Guide for creating technical specifications using Spec-Driven Development (SDD). Use when planning a new feature, project, or system — helps structure thinking from initial idea to executable plan with phases, templates, and decision frameworks.
+disable-model-invocation: false
+user-invocable: true
+argument-hint: [feature | help | constitution | specify | plan | tasks | analyze | implement]
+---
+
 # The Art of Building Technical Specifications: A Decision Framework
 
 **A comprehensive guide to Spec-Driven Development — from initial idea to executable plan, inspired by the philosophy and methodology behind GitHub's Spec Kit.**
+
+---
+
+## Handling Arguments
+
+When this skill is invoked with `$ARGUMENTS`, follow these rules before doing anything else:
+
+- **No arguments** — greet the user, print the Usage block below, and ask what they want to spec out.
+- **`help`** — print the Usage block below and stop. Do not proceed into the framework content.
+- **A phase name** (`constitution`, `specify`, `plan`, `tasks`, `analyze`, `implement`) — jump directly to that phase and guide the user through it interactively.
+- **Anything else** — treat the argument as the name of the feature or project to spec out, and begin the interactive spec session starting at Phase 1 (Constitution), asking for any missing context.
+
+### Usage
+
+```
+/spec-kit                   Start an interactive spec session
+/spec-kit help              Show this usage guide
+/spec-kit [feature]         Begin speccing a named feature or project
+/spec-kit constitution      Jump to Phase 1 — establish governing principles
+/spec-kit specify           Jump to Phase 2 — define what to build
+/spec-kit plan              Jump to Phase 3 — translate intent into architecture
+/spec-kit tasks             Jump to Phase 4 — decompose the plan into tasks
+/spec-kit analyze           Jump to Phase 5 — validate coherence before building
+/spec-kit implement         Jump to Phase 6 — execute against the task list
+```
+
+**Phases at a glance:**
+
+| # | Phase | Output artifact |
+|---|-------|-----------------|
+| 1 | Constitution | `constitution.md` — governing principles and guardrails |
+| 2 | Specify | `spec.md` — what to build and why |
+| 3 | Plan | `plan.md` + supporting artifacts |
+| 4 | Tasks | `tasks.md` — ordered, dependency-aware work items |
+| 5 | Analyze | `analysis.md` — coherence validation gate |
+| 6 | Implement | Execution against `tasks.md` |
 
 ---
 
